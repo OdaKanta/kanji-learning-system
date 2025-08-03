@@ -18,7 +18,7 @@ def admin_menu():
         print("[5]" + Fore.YELLOW          + " 🏆 トロフィー管理")
         print("[9]" + Fore.LIGHTRED_EX     + " 🔄 データベースリセット")
         print("[0]" + Fore.LIGHTRED_EX + " 🔙 戻る")
-        choice_num = input_int("番号を選んでください: ")
+        choice_num = input_int(Fore.LIGHTCYAN_EX + "番号を選んでください: " + Fore.RESET)
         
         if choice_num == 1:
             kanji_management()
@@ -51,7 +51,7 @@ def kanji_management():
         #print("[4]" + Fore.RED             + " 🗑️ 削除")
         #print("[9]" + Fore.LIGHTYELLOW_EX  + " 📂 CSVインポート")
         print("[0]" + Fore.LIGHTRED_EX     + " 🔙 戻る")
-        choice_num = input_int("番号を選んでください: ")
+        choice_num = input_int(Fore.LIGHTCYAN_EX + "番号を選んでください: " + Fore.RESET)
 
         if choice_num == 1:
             rows = kanji.list_kanji()
@@ -135,7 +135,7 @@ def problem_management():
         print("[4]" + Fore.RED             + " 🗑️ 削除")
         print("[9]" + Fore.LIGHTYELLOW_EX  + " 📂 CSVインポート")
         print("[0]" + Fore.LIGHTRED_EX     + " 🔙 戻る")
-        choice_num = input_int("番号を選んでください: ")
+        choice_num = input_int(Fore.LIGHTCYAN_EX + "番号を選んでください: " + Fore.RESET)
         
         if choice_num == 1:
             rows = problem.list_problems()
@@ -252,7 +252,7 @@ def confusing_management():
         print("[5]" + Fore.CYAN + Style.DIM + " 🔍 検索")
         print("[9]"                         + Fore.LIGHTYELLOW_EX + " 📂 CSVインポート")
         print("[0]"                         + Fore.LIGHTRED_EX + " 🔙 戻る")
-        choice_num = input_int("番号を選んでください: ")
+        choice_num = input_int(Fore.LIGHTCYAN_EX + "番号を選んでください: " + Fore.RESET)
         
         if choice_num == 1:
             rows = choice.list_confusing_choices()
@@ -374,7 +374,7 @@ def user_management():
         print("\n" + Back.WHITE + Fore.BLACK + "   ユーザー管理   ")
         print("[4]" + Fore.RED + " 🗑️ 削除")
         print("[0]" + Fore.LIGHTRED_EX + " 🔙 戻る")
-        choice_num = input_int("番号を選んでください: ")
+        choice_num = input_int(Fore.LIGHTCYAN_EX + "番号を選んでください: " + Fore.RESET)
         
         if choice_num == 4:
             username = input_nonempty("削除するユーザ名: ")
@@ -410,7 +410,7 @@ def trophy_management():
         print("[4]" + Fore.RED             + " 🗑️ 削除")
         print("[9]" + Fore.LIGHTYELLOW_EX  + " 📂 CSVインポート")
         print("[0]" + Fore.LIGHTRED_EX     + " 🔙 戻る")
-        choice_num = input_int("番号を選んでください: ")
+        choice_num = input_int(Fore.LIGHTCYAN_EX + "番号を選んでください: " + Fore.RESET)
         
         if choice_num == 1:
             trophies = history.list_trophies()

@@ -92,7 +92,7 @@ def user_session(user_id):
 
             # 実際の問題数を上限として再チェック
             if problem_num > max_count:
-                print(Fore.LIGHTYELLOW_EX + f"⚠️ 現在の問題数は {max_count} 件です（設定を自動調整しました）")
+                print(Fore.YELLOW + f"⚠️ 現在の問題数は {max_count} 件です（設定を自動調整しました）")
                 problem_num = max_count
                 user_settings[user_id]["problem_num"] = max_count
 
@@ -109,7 +109,7 @@ def user_session(user_id):
             print(Fore.LIGHTRED_EX + "❌ 無効な選択です")
 
 def register():
-    username = input_nonempty("ユーザ名: ")
+    username = input_nonempty("ユーザー名: ")
     if username is None:
         print(Fore.LIGHTCYAN_EX + "ℹ️ キャンセルしました")
         return
@@ -198,9 +198,11 @@ def history_menu(user_id):
 
             total_width = name_w + desc_w + req_w + status_w + date_w + 12  # 4本線＋スペース
 
-            print("\n" + Fore.BLACK + Back.YELLOW + center_display(" ", total_width))
-            print(       Fore.BLACK + Back.YELLOW + center_display("トロフィー一覧", total_width))
-            print(       Fore.BLACK + Back.YELLOW + center_display(" ", total_width))
+            print()
+            print(Fore.BLACK + Back.YELLOW + center_display(" ", total_width))
+            print(Fore.BLACK + Back.YELLOW + center_display("トロフィー一覧", total_width))
+            print(Fore.BLACK + Back.YELLOW + center_display(" ", total_width))
+            print()
             print(
                 center_display("名前", name_w) + " | " +
                 center_display("説明", desc_w) + " | " +

@@ -1,4 +1,5 @@
 import sqlite3
+from colorama import init, Fore, Back, Style
 
 DB_NAME = "kanji_learning.db"
 
@@ -61,7 +62,7 @@ def reset_tables():
         );
     """)
 
-    # 混同候補テーブル（kanji_id + candidate_kanji_id に一意性制約）
+    # 混同候補テーブル
     cur.execute("""
         CREATE TABLE confusing_choices (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -73,7 +74,7 @@ def reset_tables():
         );
     """)
 
-    # 学習履歴テーブル
+    # 回答履歴テーブル
     cur.execute("""
         CREATE TABLE history (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -103,7 +104,7 @@ def reset_tables():
         );
     """)
 
-    # 獲得済トロフィーテーブル
+    # 獲得トロフィーテーブル
     cur.execute("""
         CREATE TABLE achieved_trophies (
             user_id TEXT NOT NULL,

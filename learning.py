@@ -75,7 +75,7 @@ def learning_session(user_id, problems_num, time_limit=5):
                 all_correct = False
                 combo_count = 0
                 score = 0
-                print("Fore.LIGHTRED_EX + ❌ 不正解")
+                print(Fore.LIGHTRED_EX + "❌ 不正解")
                 print(f"正解: 「{kanji.get_character(correct_kanji_id)}」")
                 sound.play_sound("audio/wrong.mp3")
 
@@ -83,7 +83,7 @@ def learning_session(user_id, problems_num, time_limit=5):
         user.update_total_score(user_id, score)
     print("=== 演習終了 ===")
     if all_correct:
-        print("💯" + Fore.LIGHTWHITE_EX + Back.LIGHTRED_EX + " 全問正解！")
+        print("💯 " + Fore.LIGHTWHITE_EX + Back.LIGHTRED_EX + "全問正解！")
     print(Fore.LIGHTYELLOW_EX + f"✨ 今回の合計獲得スコア: {total_score}")
 
     trophies = history.check_trophies(user_id)

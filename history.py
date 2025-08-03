@@ -17,7 +17,7 @@ def record_answer(user_id, problem_id, is_correct, selected_kanji_id, score):
     conn.execute("PRAGMA foreign_keys = ON")
     cur = conn.cursor()
 
-    # 解答履歴を記録
+    # 回答を記録
     cur.execute("""
         INSERT INTO history (user_id, problem_id, is_correct, selected_kanji_id, answered_at, score)
         VALUES (?, ?, ?, ?, ?, ?)
@@ -252,6 +252,7 @@ def show_dashboard(user_id):
     font_en = FontProperties(fname="C:/Windows/Fonts/arial.ttf")
 
     fig, axs = plt.subplots(1, 2, figsize=(9, 4.5))
+    fig.canvas.manager.set_window_title("ダッシュボード")
     fig.subplots_adjust(wspace=2)
 
     # 左上にウィンドウを移動（TkAggのみ有効）
